@@ -22,7 +22,7 @@ public class No13_Easy {
         count += getRomanValue(ch[ch.length - 1]);
         return count;
     }
-    private int getRomanValue(char c) {
+    private  int getRomanValue(char c) {
         switch (c) {
             case 'I':
                 return 1;
@@ -41,5 +41,11 @@ public class No13_Easy {
             default:
                 return 0;
         }
+    }
+
+    public static void main(String[] args) {
+        System.out.println(new No13_Easy().romanToInt("MCMXCIV"));
+        System.out.println(new No13_Easy().romanToInt("III"));
+        System.out.println(new No13_Easy().romanToInt("LVIII"));
     }
 }
