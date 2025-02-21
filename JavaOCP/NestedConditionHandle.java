@@ -1,4 +1,5 @@
 public class NestedConditionHandle {
+    // 資料來源 : https://writingfoxx.com/?p=4826
     // 解決巢狀判別式的方法 :
     // 主要簡化巢狀判別的複雜程度，及簡化程式維護靈活度
     // 1. if-then-else + and
