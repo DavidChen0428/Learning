@@ -1,3 +1,4 @@
+package Concept;
 public class VarargsFunction {
     // Varargs Fuunction -> 可變參數，傳遞不定數量的同型參數給方法。 
     

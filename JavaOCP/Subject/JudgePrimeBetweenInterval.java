@@ -1,3 +1,4 @@
+package Subject;
 import java.util.Scanner;
 
 public class JudgePrimeBetweenInterval {

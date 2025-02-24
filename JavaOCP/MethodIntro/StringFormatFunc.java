@@ -1,3 +1,4 @@
+package MethodIntro;
 public class StringFormatFunc {
     // String.format()
     // 格式化輸出

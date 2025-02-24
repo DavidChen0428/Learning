@@ -1,3 +1,4 @@
+package Concept;
 public class DeMorganLaws {
     // 迪摩根定律
     // 用於簡化邏輯表達式的規則，特別是當涉及否定時。這些定律在數理邏輯和布爾代數中非常重要。

@@ -1,3 +1,4 @@
+package Concept;
 public class BlockBreak {
     public static void main(String[] args) {
         // break 用法 -> 跳出當前迴圈

@@ -1,3 +1,4 @@
+package Subject;
 public class Graphics {
     // 正方形
     public static void getSquare(int length){
