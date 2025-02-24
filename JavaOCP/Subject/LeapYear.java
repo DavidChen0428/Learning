@@ -12,21 +12,21 @@ public class LeapYear {
      *      四年一閏
      */
     public static void main(String[] args) {
-        Scanner sc=new Scanner(System.in);
+        Scanner sc = new Scanner(System.in);
         System.out.print("判斷是否為閏年，請輸入西元年: ");
-        int year=sc.nextInt();
-        String isThisYearLeap=(isLeap(year))?"是":"不是";
-        System.out.printf("西元 %d年%s閏年",year,isThisYearLeap);
+        int year = sc.nextInt();
+        String isThisYearLeap = (isLeap(year)) ? "是" : "不是";
+        System.out.printf("西元 %d年%s閏年", year, isThisYearLeap);
         sc.close();
     }
 
-    public static boolean isLeap(int year){
-        if(year%4!=0){
+    public static boolean isLeap(int year) {
+        if (year % 4 != 0) {
             return false;
-        }else if(year%100!=0){
+        } else if (year % 100 != 0) {
             return true;
-        }else{
-            return year%400==0;
+        } else {
+            return year % 400 == 0;
         }
     }
 }

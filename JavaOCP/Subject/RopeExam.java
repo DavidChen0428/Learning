@@ -10,23 +10,23 @@ public class RopeExam {
      */
 
     public static void main(String[] args) {
-        Scanner sc=new Scanner(System.in);
+        Scanner sc = new Scanner(System.in);
         System.out.print("剪繩子測試");
         System.out.print("請輸入起始繩長: ");
-        int ropelength=sc.nextInt();
+        int ropelength = sc.nextInt();
         System.out.print("請輸入目標繩長: ");
-        int target=sc.nextInt();
-        System.out.printf("需要 %d天才能到達目標長度。",getDayNeedToCutRope(ropelength, target));
+        int target = sc.nextInt();
+        System.out.printf("需要 %d天才能到達目標長度。", getDayNeedToCutRope(ropelength, target));
         sc.close();
     }
 
-    public static int getDayNeedToCutRope(int ropelength,int target){
-        int day=0;
-        int currentlength=ropelength;
-        do{
-            currentlength/=2;
+    public static int getDayNeedToCutRope(int ropelength, int target) {
+        int day = 0;
+        int currentlength = ropelength;
+        do {
+            currentlength /= 2;
             day++;
-        }while(currentlength>=target);
+        } while (currentlength >= target);
         return day;
     }
 }

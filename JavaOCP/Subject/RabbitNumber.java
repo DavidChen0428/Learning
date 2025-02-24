@@ -11,11 +11,11 @@ public class RabbitNumber {
      *      試問最少養幾隻
      */
     public static void main(String[] args) {
-        for(int i=1;i<=100;i++){
-            if(i%3==1&&i%5==3&&i%7==2){
-                System.out.println(i+"隻");
+        for (int i = 1; i <= 100; i++) {
+            if (i % 3 == 1 && i % 5 == 3 && i % 7 == 2) {
+                System.out.println(i + "隻");
                 break;
             }
-        }   
+        }
     }
 }

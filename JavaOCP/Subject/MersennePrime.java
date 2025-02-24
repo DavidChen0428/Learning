@@ -11,31 +11,33 @@ public class MersennePrime {
      * 
      */
     public static void main(String[] args) {
-        Scanner sc=new Scanner(System.in);
+        Scanner sc = new Scanner(System.in);
         System.out.println("找出第n個MersennePrime...");
         System.out.print("n =");
-        int n=sc.nextInt();
-        System.out.printf("第 %d個Mersenne質數是: %d",n,getMersennePrime(n));
+        int n = sc.nextInt();
+        System.out.printf("第 %d個Mersenne質數是: %d", n, getMersennePrime(n));
         sc.close();
     }
 
-    private static boolean isPrime(int number){
-        if(number<=1) return false;
-        for(int i=2;i<=Math.sqrt(number);i++){
-            if(number%i==0)return false;
+    private static boolean isPrime(int number) {
+        if (number <= 1)
+            return false;
+        for (int i = 2; i <= Math.sqrt(number); i++) {
+            if (number % i == 0)
+                return false;
         }
         return true;
     }
 
-    public static long getMersennePrime(int n){
-        int count=0;
-        int p=2;
-        long mersennePrime=0;
+    public static long getMersennePrime(int n) {
+        int count = 0;
+        int p = 2;
+        long mersennePrime = 0;
 
-        while(count<n){
-            if(isPrime(p)){// p是質數
-                mersennePrime=power(2,p)-1;
-                if(isPrime((int)mersennePrime)){// 確認該數是否為MersenePrime
+        while (count < n) {
+            if (isPrime(p)) {// p是質數
+                mersennePrime = power(2, p) - 1;
+                if (isPrime((int) mersennePrime)) {// 確認該數是否為MersenePrime
                     count++;
                 }
             }
@@ -45,10 +47,10 @@ public class MersennePrime {
     }
 
     // 使用一般乘法(因為Math.pow()回傳的是double)
-    private static long power(int base,int exponent){
-        long result=1;
-        for(int i=1;i<=exponent;i++){
-            result*=base;
+    private static long power(int base, int exponent) {
+        long result = 1;
+        for (int i = 1; i <= exponent; i++) {
+            result *= base;
         }
         return result;
     }
