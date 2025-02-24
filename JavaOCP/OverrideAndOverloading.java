@@ -14,6 +14,22 @@ public class OverrideAndOverloading{
     //      修飾符可以不同
     //      例外輸出也可以不同
     
+    /*
+     *  To following these code insert, Which can compile success?
+     *  class A{
+     *      protect int getInt(int i){return i;}
+     *  } 
+     *  class B extends A{
+     *      // some codes insert this
+     *  }
+     * 
+     *  A. public int getInt(int i){return i;}
+     *  B. private int getInt(int i){return i;}
+     *  C. private int getInt(long i){return (int)i;} 
+     *  D. protected long getInt(int i){return i;}
+     *  E. protected int getInt(long i){return (int)i;}
+     */
+
 }
 
 class A{
