@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 標籤 form 為表單的意思，管理並提交表單數據 -->
+    <form name="form1">
+        name:<input type="text" name="name"><br> <!-- 輸入的格子 -->
+        address:<input type="text" name="address" id="address2"><br>
+        <input type="button" value="test" onclick="ex1()"><br> <!-- 按鈕 -->
+    </form>
+    <br>
+    <form name="form2">
+        長:<input type='text' id='height'><br>
+        寬:<input type='text' id="width"><br>
+        <input type="button" value="test" onclick="cal1()"><br> <!-- 按鈕1寫法 -->
+        <button type="submit" onclick="cal1()">test2</button> <!-- 按鈕2寫法 -->
+    </form>
+    <br>
+    <form id="form3">
+        X:<input type="text" id="x"><br>
+        Y:<input type="text" id="y"><br>
+        <button type="submit" onclick="cal2()">計算(乘法)</button><br>
+    </form>
+        X*Y=<label id="ans"></label>
+        
+    <script>
+        // JavaScript 用 id 來辨識; CSS 用 name 來辨識
+        function ex1() {
+            console.log(document.form1.name.value);
+            console.log(document.getElementById('address2').value);
+        };
+
+        function cal1() {
+            var H = Number(document.getElementById('height').value);
+            var W = Number(document.getElementById('width').value);
+            console.log(H * W);
+        };
+
+        function cal2() {
+            var X = Number(document.getElementById('x').value);
+            var Y = Number(document.getElementById('y').value);
+            var answer = X * Y;
+            // document.getElementById('ans').innerText=answer; // value是取值出來；innerText是放值進去
+            //ans.innerText = "<h1>" + answer + "</h1>"; // 一般純文字檔輸出
+            ans.innerHTML="<h1>"+answer+"</h1>"; // HTML文字輸出
+        };
+    </script>
+</body>
+
+</html>

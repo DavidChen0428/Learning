@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button type="submit" onclick="show1()">test</button>
+    <label id="app1"></label><br>
+    <br>
+    <button type="submit" onclick="show2()">ajaxTesta</button><br>
+    <label id="app2"></label><br>
+
+    <button type="submit" onclick="show3()">ajaxTestb</button><br>
+    <label id="app3"></label><br>
+
+    <button type="submit" onclick="show4()">農業氣象</button><br>
+    <label id="app4"></label><br>
+    
+    <button type="submit" onclick="show5()">ajax practice</button><br>
+    <label id="app5"></label><br>
+
+    <script>
+        function show1(){
+            app1.innerHTML="<h1>test</h1>";
+        };
+
+        // 使用XMLHttpRequest來送出請求,取得資料並輸出
+        var xhr1=new XMLHttpRequest();
+        xhr1.open("get","a.txt",true);
+        xhr1.send();
+        function show2(){
+            app2.innerHTML=xhr1.responseText;
+        };
+
+        // AJAX要素 :
+        // XMLHttpRequest(送出請求)
+        // JSON(格式轉換)
+        // responseText(接收資料)
+
+        // XMLHttpRequest 蒐集資料後，用 JSON 格式辨識資料並輸出
+        var xhr2=new XMLHttpRequest();
+        xhr2.open("get","b.txt",true);
+        xhr2.send();
+        function show3(){
+            var showdata=JSON.parse(xhr2.responseText);
+            var x='';
+            for(var i=0;i<showdata.length;i++){
+                x=x+"id: "+showdata[i].id+
+                    ", memberno: "+showdata[i].memberno+
+                    ", name: "+showdata[i].name+
+                    ", username: "+showdata[i].username+
+                    ", password: "+showdata[i].password+
+                    ", address: "+showdata[i].address+
+                    ", phone: "+showdata[i].phone+
+                    ", mobile: "+showdata[i].mobile+
+                    ", email: "+showdata[i].email+"<br>";
+            }
+            app3.innerHTML=x;
+        }
+
+        // 接收開放式資訊平台的網頁請求
+        var xhr3=new XMLHttpRequest();
+        xhr3.open("get","https://data.moa.gov.tw/Service/OpenData/Agriculturalcoa_videoRss.aspx?IsTransData=1&UnitId=F35",true);
+        xhr3.send();
+        function show4(){
+            var showdata=JSON.parse(xhr3.responseText);
+            x='';
+            for(var i=0;i<showdata.length;i++){
+                x=x+"title: "+showdata[i].title+
+                    "<br>description: "+showdata[i].description+
+                    "<br>picimg1: <img src="+showdata[i].picimg1+">"+
+                    "<br>link: <a href="+showdata[i].link+" target=blank>影片介紹</a><hr>"
+            }
+            app4.innerHTML=x;
+        }
+
+        // 接收後端資料
+        var xhr4=new XMLHttpRequest();
+        xhr4.open("get","http://localhost:8080/selectAllMember",true);
+        xhr4.send();
+        function show5(){
+            app5.innerHTML=xhr4.responseText;
+        }
+    </script>
+</body>
+</html>

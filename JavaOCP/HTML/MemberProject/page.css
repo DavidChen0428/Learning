@@ -1,0 +1,30 @@
+.title{
+    width: 40%;
+    height: 100px;
+    background-color:#DED5CE;
+    margin-left: 30%;
+
+}
+
+.navigation
+{
+    width: 40%;
+    height: 50px;
+    background-color: #9C816D;
+    color: azure;
+    margin-left: 30%;
+}
+.content
+{
+    width: 40%;
+    height: 400px;
+    background-color: #F7F5F3;
+    margin-left: 30%;
+}
+
+.end{
+    width: 40%;
+    height: 50px;
+    background-color:#251F18;
+    margin-left: 30%;
+}

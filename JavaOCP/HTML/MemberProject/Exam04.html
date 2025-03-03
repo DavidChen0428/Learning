@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 套用CSS，版面樣式 -->
+    <link href="page.css" rel="stylesheet"> 
+</head>
+<body>
+    <div id="title" class="title"></div><!-- 頁面分割區域 title, navigation, content, end -->
+    <div id="navigation" class="navigation">
+        <a href="Exam04.html">首頁</a>
+        <a href="login.html">登入</a>
+    </div>
+    <div id="content" class="content">
+        <button type="submit" onclick="show()">test</button><br>
+        <label id="app"></label><br>
+
+    </div>
+    <div id="end" class="end"></div>
+
+    <script>
+        // 使用 XMLHttpRequest 物件來做 ajax 的資料庫資料擷取訊息傳送與接收
+        var xhr=new XMLHttpRequest();
+        xhr.open("get","http://localhost:8080/selectAllMember",true);
+        xhr.send();
+        function show(){
+            var showdata=JSON.parse(xhr.responseText);
+            var x='';
+            for(var i=0;i<showdata.length;i++){
+                x=x+"id: "+showdata[i].id+
+                    "<br>name: "+showdata[i].name+
+                    "<br>address: "+showdata[i].address+"<hr>";
+            }
+            app.innerHTML=x;
+        }
+    </script>
+</body>
+</html>

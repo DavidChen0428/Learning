@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 套入 jQuery 套件有二 -->
+    <!-- 使用 CDN 方法 -->
+    <script src="https://code.jquery.com/jquery-3.7.1.js"
+        integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <!-- 下載 jQuery 後引用 -->
+    <!--  <script src="jquery-3.7.1.js"></script>  -->
+
+    <style>
+        .abc {
+            background-color: blueviolet;
+            font-size: 15pt;
+            margin-left: 100px;
+        }
+    </style>
+
+    <script>
+        function show1(){
+            alert("jQuery click test1");
+        }
+        function show2(){
+            alert("jQuery click test2");
+        }
+    </script>
+</head>
+
+<body>
+    <!-- 使用 jQuery 對資料源作請求、資料接收、輸出 -->
+    <h1>test</h1>
+    <div id="t1">test1</div>
+    <div class="t2">test2</div>
+    <div id="t3">test3</div>
+    <br>
+    <div id="app1"></div>
+    <div id="app2"></div>
+    <div id="app3">test</div>
+    <div id="app4"></div>
+    <br>
+    <button id="b1">ButtonTest</button>
+    <div id="t4">test4</div>
+    <hr>
+    <button id="b2">button2</button>
+    <button id="b3">button3</button>
+    <div id="t5">test5</div>
+    <hr>
+    <div id="ans1"></div>
+
+    <script>
+        $(document).ready(function () { // 當文檔完全加載（就緒）時執行以下函數
+            alert("hello jQuery"); // 彈出一個提示框，顯示 "hello jQuery"
+        });
+
+        // jQuery為輔助javaScript用的工具(函式庫)
+        // $(HTML物件).action() -> 指使HTML物件做動作
+        // 呼叫區塊的話 -> $(#id)、$(.class)
+        $("h1").css("background-color", "red");
+        $("#t1").css({
+            "background-color": "green",
+            "font-size": "24pt"
+        });
+        $(".t2").css({
+            "background-color": "blue",
+            "font-size": "10pt"
+        });
+        $("#t3").addClass("abc");// 將abc的css套件帶入t3區塊
+
+        $("#app1").html("<h1>hello jQuery</h1>");// 以 HTML 格式輸出內容
+        $("#app2").text("<h1>hello jQuery</h1>");// 以 TEXT 格式輸出內容
+        $("#app3").append("aaa");// 在原文後增加資料
+        $("#app4").html("<font size='5'>abc Query</font>");
+        $("#app4").after("<font size='2'>abc Query</font>");// 在原文的下一行增加
+
+        // 點擊區塊(按鈕)方法 :
+        // 方法一 : bind 
+        $("#b1").bind("click",show1);// 讓button(b1)的單擊功能為show1()
+        $("#t4").bind("dblclick",show2);// 雙擊區塊(t1)會觸發show2功能
+        // 方法二 : on
+        $("#b2").on("click",function(){
+            $("#ans1").html("<h4>jQuery on event</h4>");
+        });
+        $("#b3").on("click",function(){
+            $("#ans1").append("<h4>add</h4>");
+        });
+        // 方法三 : click
+        $("#t5").click(function(){
+            $("#ans1").css("background-color","red");
+        });
+
+    </script>
+
+</body>
+
+</html>
